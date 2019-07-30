@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { categories } from '../../testdata';
+import Scoreboard from "./Scoreboard";
+import Gameboard from "./Gameboard";
+import Response from "./Response";
 
 export default class App extends Component {
   constructor(props) {
@@ -20,10 +23,9 @@ export default class App extends Component {
   render() {
     return (
       <div id={'app'}>
-        What is Reactor 2?
-        {/* Gameboard */}
-        {/* Scoreboard */}
-        {/* Response */}
+        {<Gameboard categories={this.state.results} currentQuestion={this.state.currentQuestion} answeredQuestions={this.state.answeredQuestions}/>}
+        {<Scoreboard props={this.state.score}/>}
+        {<Response />}
       </div>
     );
   }

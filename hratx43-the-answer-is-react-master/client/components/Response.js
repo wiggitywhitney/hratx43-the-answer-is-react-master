@@ -24,7 +24,10 @@ export default class Response extends Component {
           type='text'
           placeholder='Answers go here!'
           // handle data change
+          onChange={this.recordResponse}
           // handle when 'enter' is hit
+          onSubmit = {this.submitResponse}
+          
         >
         </input>
       </div>

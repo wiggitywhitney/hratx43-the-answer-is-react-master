@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Category from './Category';
+
 
 const Categories = props => {
+  //console.log(props.categories)
   return (
     <div id={'categories'} data-testid="categoryList">
-      {/* display all the categories */}
+        {props.categories.map(category => 
+          <Category category = {category}/>
+        )}
     </div>
   );
 };
