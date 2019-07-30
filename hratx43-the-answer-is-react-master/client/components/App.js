@@ -23,10 +23,8 @@ export default class App extends Component {
 
   handleClueOnClick(clue) {
     console.log(clue)
-  }
-
-  displayQuestion() {
-
+    this.setState({currentQuestion: clue})
+    console.log(this.state.currentQuestion)
   }
 
   render() {
@@ -40,7 +38,7 @@ export default class App extends Component {
         />}
 
         {<Scoreboard
-          props={this.state.score}
+          score={this.state.score}
         />}
 
         {<Response />}

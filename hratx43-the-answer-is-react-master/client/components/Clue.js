@@ -5,14 +5,27 @@ import App from './App';
 const Clue = props => {
   //console.log(props);
   return (
-  
     <div className={'clueValue'}>
-      <button className={'btn'} onClick={() => props.handleClueOnClick(props.clue)}>
-        ${props.clue.value}
-      </button>
+        {props.wasClicked ? 
+        
+        <div></div> : 
+        
+        <div>
+          <button className={'btn'} onClick={() => props.handleClueOnClick(props.clue)}>
+            ${props.clue.value}
+          </button>
+        </div>
+        }
     </div>
+
+
+
+
+
+
+  
+
     
-  //{if (App.answeredquestions.contains({props.id})) ? <div className={'clueValue'}>${props.clue.game_id}</div> : <div className={'clueValue'}>${props.clue.value}</div>))}
   // show $ value of clue OR
   // the Clue question itself OR
   // empty screen if it was already answered

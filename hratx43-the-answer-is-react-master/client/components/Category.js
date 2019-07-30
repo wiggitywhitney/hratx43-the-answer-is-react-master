@@ -9,7 +9,7 @@ const Category = props => {
 
 
     <div className={'category'} data-testid="category">
-      {<h3 className={"categoryTitle"}>{props.category.title}</h3>}
+      {<div className={"categoryTitle"}>{props.category.title}</div>}
       {props.category.clues.map(clue => 
           <Clue
               clue = {clue}

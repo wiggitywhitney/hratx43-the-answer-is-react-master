@@ -12,21 +12,35 @@ export default class Response extends Component {
   recordResponse(newText) {
     this.setState({ userResponse: newText });
   }
+
   submitResponse(event) {
+    
+    if(event.key === 'Enter') {
+      event.preventDefault();
+
+      this.recordResponse(event.target.value);
+
+      //console.log(userAnswer);
+    }
+
     // this function should fire when the user fills the response and hits 'enter'
+    //this.recordResponse()
       // Is the user response correct? 
       // yes/no? What should happen?
+    
   }
+
   render(){
     return (
       <div id={'response'} data-testid="response">
         <input
+          className='responseText'
           type='text'
           placeholder='Answers go here!'
           // handle data change
           onChange={this.recordResponse}
           // handle when 'enter' is hit
-          onSubmit = {this.submitResponse}
+          onKeyPress={this.submitResponse.bind(this)}
           
         >
         </input>
