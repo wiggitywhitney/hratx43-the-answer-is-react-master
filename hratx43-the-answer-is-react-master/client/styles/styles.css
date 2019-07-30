@@ -66,6 +66,16 @@ ul {
   text-shadow: 3px 3px black;
 }
 
+.btn {
+  background: #060ce9;
+  border: none;
+  color: gold;
+  font-size: 0.85em;
+  font-family: 'ITC Korinna';
+  font-weight: 800;
+  text-shadow: 3px 3px black;
+}
+
 #question {
   text-align: center;
   font-size: 2.5em;

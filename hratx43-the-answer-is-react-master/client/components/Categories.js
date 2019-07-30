@@ -8,7 +8,11 @@ const Categories = props => {
   return (
     <div id={'categories'} data-testid="categoryList">
         {props.categories.map(category => 
-          <Category category = {category}/>
+          <Category
+            category = {category}
+            handleClueOnClick = {props.handleClueOnClick}
+            retrieveClues = {props.retrieveClues}
+          />
         )}
     </div>
   );

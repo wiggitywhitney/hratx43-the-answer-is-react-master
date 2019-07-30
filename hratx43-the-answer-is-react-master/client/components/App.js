@@ -12,7 +12,7 @@ export default class App extends Component {
       results: categories,
       currentQuestion: {},
       answeredQuestions: [],
-      score: 0
+      score: 0,
     };
   }
   componentDidMount() {
@@ -20,11 +20,29 @@ export default class App extends Component {
     //1. A query to /api/categories to get a set of categories
     //2. A set of queries afterwards to /api/category at each category id to get clues for that category
   }
+
+  handleClueOnClick(clue) {
+    console.log(clue)
+  }
+
+  displayQuestion() {
+
+  }
+
   render() {
     return (
       <div id={'app'}>
-        {<Gameboard categories={this.state.results} currentQuestion={this.state.currentQuestion} answeredQuestions={this.state.answeredQuestions}/>}
-        {<Scoreboard props={this.state.score}/>}
+        {<Gameboard
+          categories={this.state.results}
+          currentQuestion={this.state.currentQuestion}
+          answeredQuestions={this.state.answeredQuestions}
+          handleClueOnClick={this.handleClueOnClick.bind(this)}
+        />}
+
+        {<Scoreboard
+          props={this.state.score}
+        />}
+
         {<Response />}
       </div>
     );

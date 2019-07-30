@@ -11,7 +11,12 @@ const Category = props => {
     <div className={'category'} data-testid="category">
       {<h3 className={"categoryTitle"}>{props.category.title}</h3>}
       {props.category.clues.map(clue => 
-          <Clue clue= {clue}/>
+          <Clue
+              clue = {clue}
+              wasClicked = {false}
+              handleClueOnClick = {props.handleClueOnClick}
+              retrieveClues = {props.retrieveClues}
+          />
       )}
     </div>
       
