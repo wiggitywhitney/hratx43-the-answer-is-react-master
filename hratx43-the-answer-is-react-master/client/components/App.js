@@ -27,6 +27,14 @@ export default class App extends Component {
     console.log(this.state.currentQuestion)
   }
 
+  selectQuestion() {
+
+  }
+
+  submitResponse() {
+
+  }
+
   render() {
     return (
       <div id={'app'}>
@@ -41,7 +49,7 @@ export default class App extends Component {
           score={this.state.score}
         />}
 
-        {<Response />}
+        {<Response submitResponse={this.submitResponse.bind(this)}/>}
       </div>
     );
   }

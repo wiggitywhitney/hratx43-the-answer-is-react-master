@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Categories from './Categories';
+import Clue from './Clue';
 
 
 const Gameboard = props => {
@@ -9,13 +10,22 @@ const Gameboard = props => {
       <div>
         {props.currentQuestion.question ? 
         
-        <div>{props.currentQuestion.question}</div> : 
+        <div>{props.currentQuestion.question}
+          <Clue
+            selected={true}
+            selectQuestion={props.selectQuestion}
+            answered={false}
+            clueObject={props.currentQuestion}
+          />
+        </div> : 
         
         <div>
           <Categories
             categories = {props.categories}
             handleClueOnClick = {props.handleClueOnClick}
             retrieveClues = {props.retrieveClues}
+            currentQuestion = {props.currentQuestion}
+            answeredQuestions = {props.answeredQuestions}
           />
         </div>
         }
@@ -28,6 +38,7 @@ const Gameboard = props => {
     </div>
   );
 };
+
 
 Gameboard.propTypes = {
   currentQuestion: PropTypes.object,
